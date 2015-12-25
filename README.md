@@ -50,7 +50,4 @@ Sonos (tuneIn based, or whatever)
 - http://www.shoutcast.com/  
 - https://www.internet-radio.com
 
-###Todo:
-- check that noDEBUG is working
-- experiment with the ETH_DELAY
-- fill in last 3 readio stations
+

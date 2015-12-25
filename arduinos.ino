@@ -42,7 +42,7 @@ boolean readResponse = false;
  */
 void setup()
 {
-    const int ETH_DELAY = 400;
+    const int ETH_DELAY = 200; // Not clear how much is needed here (and why...)
 
 #ifdef DEBUG
     Serial.begin(9600);
