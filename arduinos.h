@@ -1,13 +1,13 @@
 //========================= Configuration start =============================
-#define notDEBUG // Set this to DEBUG if you want support for serial interface
+#define DEBUG // Set this to DEBUG if you want support for serial interface
 
 //Use this if it is NANO+SHIELD
-//#include <UIPEthernet.h>
-//#define UIPE
+#include <UIPEthernet.h>
+#define UIPE
 
 //Use this for UNO+SHIELD
-#include <SPI.h>
-#include <Ethernet.h>
+//#include <SPI.h>
+//#include <Ethernet.h>
 
 #define CLIENT_MAC           {0xBE, 0xEF, 0xEE, 0x00, 0x20, 0x09}
 #define CLIENT_IP            { 192, 168, 1, 210} 

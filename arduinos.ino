@@ -22,10 +22,11 @@ const char RADIO_P6[]          PROGMEM = "live-icy.gss.dr.dk/A/A29H.mp3.m3u";   
 const char RADIO_P7[]          PROGMEM = "live-icy.gss.dr.dk/A/A21H.mp3.m3u";            const char RADIO_P7_NAME[]          PROGMEM = "P7";
 const char RADIO_P8[]          PROGMEM = "live-icy.gss.dr.dk/A/A22H.mp3.m3u";            const char RADIO_P8_NAME[]          PROGMEM = "P8";
 const char RADIO_NYHEDER[]     PROGMEM = "live-icy.gss.dr.dk/A/A02L.mp3.m3u";            const char RADIO_NYHEDER_NAME[]     PROGMEM = "Nyheder"; // L eller H?
-const char RADIO_JAZZGROOVE[]  PROGMEM = "199.180.72.2:8015/listen.pls";                 const char RADIO_JAZZGROOVE_NAME[]  PROGMEM = "JazzGroove"; // "77.67.106.49/stream" 
+
+const char RADIO_KLASSISK[]    PROGMEM = "onair.100fmlive.dk/klassisk_live.mp3.m3u";     const char RADIO_KLASSISK_NAME[]    PROGMEM = "Klassisk";
 const char RADIO_24SYV[]       PROGMEM = "streaming.radio24syv.dk/pls/24syv_64_IR.pls";  const char RADIO_24SYV_NAME[]       PROGMEM = "24syv"; 
-const char RADIO_ANR[]         PROGMEM = "http://www.anr.dk/upload/anr.m3u";             const char RADIO_ANR_NAME[]         PROGMEM = "ANR"; 
-const char RADIO_JAZZFM[]      PROGMEM = "http://www.listenlive.eu/jazzfmuk.m3u";        const char RADIO_JAZZFM_NAME[]      PROGMEM = "JazzFM"; 
+const char RADIO_JAZZGROOVE[]  PROGMEM = "199.180.72.2:8015/listen.pls";                 const char RADIO_JAZZGROOVE_NAME[]  PROGMEM = "JazzGroove"; // "77.67.106.49/stream" 
+const char RADIO_JAZZFM[]      PROGMEM = "listenlive.eu/jazzfmuk.m3u";                   const char RADIO_JAZZFM_NAME[]      PROGMEM = "JazzFM"; 
 
 /*
 http://www.listenlive.eu/jazzfmuk.m3u
@@ -89,7 +90,7 @@ void loop()
             case '7': sonosRadioStation(RADIO_P7,          RADIO_P7_NAME);          break;
             case '8': sonosRadioStation(RADIO_P8,          RADIO_P8_NAME);          break;
             case '9': sonosRadioStation(RADIO_NYHEDER,     RADIO_NYHEDER_NAME);     break;
-            case 'A': sonosRadioStation(RADIO_ANR,         RADIO_ANR_NAME);         break;
+            case 'A': sonosRadioStation(RADIO_KLASSISK,    RADIO_KLASSISK_NAME);    break;
             case 'B': sonosRadioStation(RADIO_24SYV,       RADIO_24SYV_NAME);       break;
             case 'C': sonosRadioStation(RADIO_JAZZGROOVE,  RADIO_JAZZGROOVE_NAME);  break;
             case 'D': sonosRadioStation(RADIO_JAZZFM,      RADIO_JAZZFM_NAME);      break;
