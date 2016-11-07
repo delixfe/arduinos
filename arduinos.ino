@@ -26,6 +26,7 @@ const char RADIO_NYHEDER[]     PROGMEM = "live-icy.gss.dr.dk/A/A02L.mp3.m3u";   
 const char RADIO_KLASSISK[]    PROGMEM = "onair.100fmlive.dk/klassisk_live.mp3.m3u";     const char RADIO_KLASSISK_NAME[]    PROGMEM = "Klassisk";
 const char RADIO_24SYV[]       PROGMEM = "streaming.radio24syv.dk/pls/24syv_64_IR.pls";  const char RADIO_24SYV_NAME[]       PROGMEM = "24syv"; 
 const char RADIO_JAZZGROOVE[]  PROGMEM = "199.180.72.2:8015/listen.pls";                 const char RADIO_JAZZGROOVE_NAME[]  PROGMEM = "JazzGroove"; // "77.67.106.49/stream" 
+const char RADIO_JAZZGROOVE2[] PROGMEM = "thejazzgroove.com/listen/thejazzgroove-west-mp3-128.pls" const char RADIO_JAZZGROOVE_NAME2[]  PROGMEM = "JazzGroove2";
 const char RADIO_JAZZFM[]      PROGMEM = "listenlive.eu/jazzfmuk.m3u";                   const char RADIO_JAZZFM_NAME[]      PROGMEM = "JazzFM"; 
 
 /*
@@ -91,7 +92,8 @@ void loop()
             case '8': sonosRadioStation(RADIO_P8,          RADIO_P8_NAME);          break;
             case '9': sonosRadioStation(RADIO_NYHEDER,     RADIO_NYHEDER_NAME);     break;
             case 'A': sonosRadioStation(RADIO_KLASSISK,    RADIO_KLASSISK_NAME);    break;
-            case 'B': sonosRadioStation(RADIO_24SYV,       RADIO_24SYV_NAME);       break;
+//          case 'B': sonosRadioStation(RADIO_24SYV,       RADIO_24SYV_NAME);       break;
+            case 'B': sonosRadioStation(RADIO_JAZZGROOVE2, RADIO_JAZZGROOVE_NAME2); break;
             case 'C': sonosRadioStation(RADIO_JAZZGROOVE,  RADIO_JAZZGROOVE_NAME);  break;
             case 'D': sonosRadioStation(RADIO_JAZZFM,      RADIO_JAZZFM_NAME);      break;
             default: readResponse = false;                                          break;
