@@ -26,7 +26,7 @@ const char RADIO_NYHEDER[]     PROGMEM = "live-icy.gss.dr.dk/A/A02L.mp3.m3u";   
 const char RADIO_KLASSISK[]    PROGMEM = "onair.100fmlive.dk/klassisk_live.mp3.m3u";     const char RADIO_KLASSISK_NAME[]    PROGMEM = "Klassisk";
 const char RADIO_24SYV[]       PROGMEM = "streaming.radio24syv.dk/pls/24syv_64_IR.pls";  const char RADIO_24SYV_NAME[]       PROGMEM = "24syv"; 
 const char RADIO_JAZZGROOVE[]  PROGMEM = "199.180.72.2:8015/listen.pls";                 const char RADIO_JAZZGROOVE_NAME[]  PROGMEM = "JazzGroove"; // "77.67.106.49/stream" 
-const char RADIO_JAZZGROOVE2[] PROGMEM = "thejazzgroove.com/listen/thejazzgroove-west-mp3-128.pls" const char RADIO_JAZZGROOVE_NAME2[]  PROGMEM = "JazzGroove2";
+const char RADIO_JAZZGROOVE2[] PROGMEM = "thejazzgroove.com/listen/thejazzgroove-west-mp3-128.pls"; const char RADIO_JAZZGROOVE_NAME2[]  PROGMEM = "JazzGroove2";
 const char RADIO_JAZZFM[]      PROGMEM = "listenlive.eu/jazzfmuk.m3u";                   const char RADIO_JAZZFM_NAME[]      PROGMEM = "JazzFM"; 
 
 /*
