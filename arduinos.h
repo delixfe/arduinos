@@ -16,8 +16,13 @@
 
 //========================= Configuration end =============================
 
-#include <avr/pgmspace.h>
-#include <arduino.h>
+#if defined ( ESP8266 )
+  #include <pgmspace.h>
+#else
+  #include <avr/pgmspace.h>
+#endif
+
+#include <Arduino.h>
 
 // arduinos.ino
 extern boolean readResponse;
