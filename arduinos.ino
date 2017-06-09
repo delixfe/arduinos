@@ -46,15 +46,12 @@ void setup()
     const int ETH_DELAY = 200; // Not clear how much is needed here (and why...)
 
 #ifdef DEBUG
-    Serial.begin(9600);
-    Serial.println("Starting ethernet");
+    Serial.begin(115200);
+    Serial.println("Starting network");
     delay(ETH_DELAY);
 #endif
-    Ethernet.begin(arduino_mac, arduino_ip);
-#ifdef DEBUG
-    delay(ETH_DELAY);
-    Serial.println("Ethernet started");
-#endif
+
+    setupNetwork();
     setupKeyboard();
 
     ledInit();

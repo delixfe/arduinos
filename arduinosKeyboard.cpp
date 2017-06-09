@@ -1,7 +1,8 @@
+#include "arduinos.h"
 //#include <Key.h>
 #include <Keypad.h>
 
-#include "arduinos.h"
+
 //TODO: we do not have a 4x4 keyboard...
 const byte ROWS = 4; //four rows
 const byte COLS = 3; //three columns

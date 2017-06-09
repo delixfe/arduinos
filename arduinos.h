@@ -1,9 +1,23 @@
+
+#include <Arduino.h>
+
 //========================= Configuration start =============================
-#define notDEBUG // Set this to DEBUG if you want support for serial interface
+#define DEBUG // Set this to DEBUG if you want support for serial interface
+
+//Wifi or Ethernet
+#define WIFI
+//#define ETHERNET
+
+//ESP...
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+
+
+//for ethernet
 
 //Use this if it is NANO+SHIELD
-#include <UIPEthernet.h>
-#define UIPE
+//#include <UIPEthernet.h>
+//#define UIPE
 
 //Use this for UNO+SHIELD
 //#include <SPI.h>
@@ -11,8 +25,8 @@
 
 #define CLIENT_MAC           {0xBE, 0xEF, 0xEE, 0x00, 0x20, 0x09}
 #define CLIENT_IP            { 192, 168, 1, 83 } 
-#define SONOS_IP_LIVING_ROOM { 192, 168, 1, 82 }
-#define SONOS_IP_KITCHEN     { 192, 168, 1, 80 }
+#define SONOS_IP_LIVING_ROOM { 192, 168, 1, 112 }
+#define SONOS_IP_KITCHEN     { 192, 168, 1, 116 }
 
 //========================= Configuration end =============================
 
@@ -22,7 +36,7 @@
   #include <avr/pgmspace.h>
 #endif
 
-#include <Arduino.h>
+
 
 // arduinos.ino
 extern boolean readResponse;
@@ -64,7 +78,13 @@ extern void sonosPause();
 extern void sonosPlay();
 
 // arduinosHttpPost.cpp
+#ifdef ETHERNET
 extern EthernetClient client;
+#endif
+#ifdef WIFI
+extern WiFiClient client; 
+#endif
+extern void setupNetwork(void);
 extern void outln(const char *s);
 extern void out(const char *s);
 extern void sonos(const char *pTag, const char *pCmd, const char *pStart, const char *pEnd1, const char *pEnd2, const char *pStationName, const char *pEnd3, const char *pEnd4);

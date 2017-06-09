@@ -1,5 +1,8 @@
 #include "arduinos.h"
 
+const byte PIN_GREEN = D11;
+const byte PIN_RED = D12;
+
 const byte OFF   = 0;
 const byte GREEN = 1;
 const byte RED   = 2;
@@ -27,11 +30,11 @@ void ledStopTimer() {
  * Initialize the LED pins
  */
 void ledInit(void) {
-  pinMode(6, OUTPUT); 
-  digitalWrite(6, LOW);  // Green
+  pinMode(PIN_GREEN, OUTPUT); 
+  digitalWrite(PIN_GREEN, LOW);  // Green
 
-  pinMode(7, OUTPUT); 
-  digitalWrite(7, LOW);  // Red
+  pinMode(PIN_RED, OUTPUT); 
+  digitalWrite(PIN_RED, LOW);  // Red
 }
 
 /*
@@ -40,21 +43,21 @@ void ledInit(void) {
 void led(byte colour) {
   switch (colour) {
     case RED:
-      digitalWrite(6, LOW);
-      digitalWrite(7, HIGH);
+      digitalWrite(PIN_GREEN, LOW);
+      digitalWrite(PIN_RED, HIGH);
       //Serial.println("R");
       ledStartTimer(RED_ON_TIME);
       break;
     case GREEN:
-      digitalWrite(6, HIGH);
-      digitalWrite(7, LOW);
+      digitalWrite(PIN_GREEN, HIGH);
+      digitalWrite(PIN_RED, LOW);
       //Serial.println("G");
       ledStartTimer(GREEN_ON_TIME);
       break;
     case OFF:
     default:
-      digitalWrite(6, LOW);
-      digitalWrite(7, LOW);
+      digitalWrite(PIN_GREEN, LOW);
+      digitalWrite(PIN_RED, LOW);
       //Serial.println("X");
       ledStopTimer();
       break;

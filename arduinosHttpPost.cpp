@@ -3,7 +3,57 @@
 const char ENVELOPE_START[]    PROGMEM = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body>";
 const char ENVELOPE_END[]      PROGMEM = "</s:Body></s:Envelope>";
 
+#ifdef ETHERNET
 EthernetClient client;
+#endif
+#ifdef WIFI
+WiFiClient client; 
+#endif
+
+#ifdef WIFI
+void setupNetwork() {
+
+// TODO: inform that creadentials need to be set...
+#ifdef DEBUG
+    Serial.println(F("Setting up wireless network connection."));
+#endif
+
+  WiFi.begin();
+  
+  int attempt = 0;
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    attempt++;
+#ifdef DEBUG
+    Serial.print(F("Connection attempt ")); 
+    Serial.println(attempt);
+#endif
+  }
+
+#ifdef DEBUG
+  Serial.print(F("Connected, IP address: "));
+  Serial.println(WiFi.localIP());
+#endif
+
+}
+#endif
+
+#ifdef ETHERNET
+void setupNetwork() {
+
+#ifdef DEBUG
+    Serial.println(F("Setting up ethernet connection."));
+#endif
+
+    Ethernet.begin(arduino_mac, arduino_ip);
+    
+#ifdef DEBUG
+    delay(ETH_DELAY);
+    Serial.println("Ethernet started");
+#endif
+
+}
+#endif
 
 /*
  * Main method for assembling the POST message to the Sonos
